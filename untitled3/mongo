@@ -1,0 +1,7 @@
+#USing Dictionary to achieve stuff
+names={1:'kandhan',2:'priya',3:'sekar',4:'gunaraj'}
+for i in range(0,3):
+    a=raw_input('enter name')
+    b=len(names)+1
+    names[b]=a
+print names
