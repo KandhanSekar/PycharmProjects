@@ -1,0 +1,23 @@
+def rotated(a,low,high):
+    if high<low:
+        return a[0]
+    if high==low:
+        return a[low]
+
+    mid = (high+ low)/2
+
+    if mid<high and mid >low and a[mid]>a[mid-1] and a[mid ]>a[mid+1]:
+        return a[mid]
+
+    if a[high]<a[low]:
+        return rotated(a,0,mid-1)
+    else:
+        return rotated(a,mid+1,high)
+
+
+
+
+a=[1,2,3,4,0]
+b=[6,7,8,1,2,3,4]
+c=[10,11,12,1,2,3,4,5,6,7,8]
+print(rotated(c,0,len(c)-1))
