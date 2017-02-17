@@ -1,23 +1,32 @@
-def rotated(a,low,high):
-    if high<low:
-        return a[0]
-    if high==low:
-        return a[low]
+def function(a,b):
+    print(a,b)
+    total=len(a)+len(b)
+    median=total/2
+    x=0
+    y=0
+    while(median>=0):
+        print median
+        print (x,y)
+        if x<len(a):
+            if a[x]>b[y] :
+                y=y+1
+            else:
+                x=x+1
 
-    mid = (high+ low)/2
+        else:
 
-    if mid<high and mid >low and a[mid]>a[mid-1] and a[mid ]>a[mid+1]:
-        return a[mid]
+            y=y+1
+        median = median - 1
 
-    if a[high]<a[low]:
-        return rotated(a,0,mid-1)
+
+    if(x<len(a)):
+        return a[x+median]
     else:
-        return rotated(a,mid+1,high)
+        return b[y+median]
 
 
 
 
-a=[1,2,3,4,0]
-b=[6,7,8,1,2,3,4]
-c=[10,11,12,1,2,3,4,5,6,7,8]
-print(rotated(c,0,len(c)-1))
+a=[2]
+b=[2,4,7,3,8,1,0,10]
+print(function(sorted(a),sorted(b)))
